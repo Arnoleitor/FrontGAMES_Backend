@@ -52,4 +52,12 @@ Route::get('Group', [GroupController::class, "showAllgroup"]);//
 Route::get('Group/{id}', [GroupController::class, "showgroupByID"]);//
 Route::delete('Group/{id}', [GroupController::class, "Deletegroup"]);//
 Route::put('Group/{id}', [GroupController::class, "Updatetegroup"]);//
+
+//FRIENDS
+
+Route::post('Friend', [FriendController::class, "newfriend"]);//
+Route::get('Friend', [FriendController::class, "showAllfriend"]);//
+Route::get('Friend/{id}', [FriendController::class, "showfriendByID"]);//
+Route::put('Friend/{id}', [FriendController::class, "updatefriend"]);//
+Route::delete('Friend/{id}', [FriendController::class, "deletefriend"]);//
 ;
