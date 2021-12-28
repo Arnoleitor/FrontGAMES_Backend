@@ -27,18 +27,18 @@ class UserController extends Controller
         $raza = $request->input('favoritegame');
         $edad = $request->input('city');
         $localidad = $request->input('email');
-        $password->string('password',50);
-        $idpsn->string('idpsn',20);
-        $idsteam->string('idsteam',20);
-        $idxbox->string('idxbox',20);
-        $idriotgames->string('idnintendo',50);
-        $idepicgames->string('idepicgames',50);
-        $idactivision->string('idactivision',30);
-        $idblizzard->string('idblizzard',30);
-        $idriotgames->string('idriotgames',30);
-        $iduplay->string('iduplay',30);
-        $idbattlenet->string('idbattlenet',30);
-        $idbethesda->string('idbethesda',30);
+        $password->input('password');
+        $idpsn->input('idpsn');
+        $idsteam->input('idsteam');
+        $idxbox->input('idxbox');
+        $idriotgames->input('idnintendo');
+        $idepicgames->input('idepicgames');
+        $idactivision->input('idactivision');
+        $idblizzard->input('idblizzard');
+        $idriotgames->input('idriotgames');
+        $iduplay->input('iduplay');
+        $idbattlenet->input('idbattlenet');
+        $idbethesda->input('idbethesda');
         $table->timestamps();
 
         try {
@@ -84,32 +84,32 @@ class UserController extends Controller
     public function UpdateUsers (Request $request,$id){
 
        
-        $email = $request->input('name');
-        $nombre = $request->input('role');
-        $password = $request->input('age');
-        $role = $request->input('surname');
+        $email = $request->input('email');
+        $name = $request->input('name');
+        $password = $request->input('password');
+        $role = $request->input('role');
         $tipo = $request->input('nickname');
         $raza = $request->input('favoritegame');
         $edad = $request->input('city');
         $localidad = $request->input('email');
-        $password->string('password',50);
-        $idpsn->string('idpsn',20);
-        $idsteam->string('idsteam',20);
-        $idxbox->string('idxbox',20);
-        $idriotgames->string('idnintendo',50);
-        $idepicgames->string('idepicgames',50);
-        $idactivision->string('idactivision',30);
-        $idblizzard->string('idblizzard',30);
-        $idriotgames->string('idriotgames',30);
-        $iduplay->string('iduplay',30);
-        $idbattlenet->string('idbattlenet',30);
-        $idbethesda->string('idbethesda',30);
+        $password->input('password',50);
+        $idpsn->input('idpsn',20);
+        $idsteam->input('idsteam',20);
+        $idxbox->input('idxbox',20);
+        $idriotgames->input('idnintendo',50);
+        $idepicgames->input('idepicgames',50);
+        $idactivision->input('idactivision',30);
+        $idblizzard->input('idblizzard',30);
+        $idriotgames->input('idriotgames',30);
+        $iduplay->input('iduplay',30);
+        $idbattlenet->input('idbattlenet',30);
+        $idbethesda->input('idbethesda',30);
         $table->timestamps();
 
 
         try {
 
-            $Usuario = User::where('id', '=', $id)
+            $User = User::where('id', '=', $id)
             ->update(
                 [
                     'name' => $name,
@@ -151,9 +151,9 @@ class UserController extends Controller
 
 
         try {
-            $Usuario = User::all()
+            $User = User::all()
             ->where('id', "=", $id);
-            return $Usuario;
+            return $User;
 
         } catch (QueryException $error) {
 
@@ -172,20 +172,20 @@ class UserController extends Controller
 
         try {
     ////////////////BUSCA EL PLAYER POR ID////////////////
-            $arrayUsuario = User::all()
+            $arrayUser = User::all()
             ->where('id', '=', $id);
 
-            $Usuario = User::where('id', '=', $id);
+            $User = User::where('id', '=', $id);
             
-            if (count($arrayUsuario) == 0) {
+            if (count($arrayUser) == 0) {
                 return response()->json([
-                    "data" => $arrayUsuario,
+                    "data" => $arrayUser,
                     "message" => "User not found"
                 ]);
             }else{
-                $Usuario->delete();
+                $User->delete();
                 return response()->json([
-                    "data" => $arrayUsuario,
+                    "data" => $arrayUser,
                     "message" => "User deleted successfully"
                 ]);
             }

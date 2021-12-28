@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('favoritegame',20);
             $table->string('city',20);
             $table->string('email',50)->unique();
-            $table->string('password',50);
+            $table->string('password',100);
             $table->string('idpsn',30);
             $table->string('idsteam',30);
             $table->string('idxbox',30);
