@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -84,27 +86,26 @@ class UserController extends Controller
     public function UpdateUsers (Request $request,$id){
 
        
-        $email = $request->input('email');
         $name = $request->input('name');
-        $password = $request->input('password');
         $role = $request->input('role');
-        $tipo = $request->input('nickname');
-        $raza = $request->input('favoritegame');
-        $edad = $request->input('city');
-        $localidad = $request->input('email');
-        $password->input('password',50);
-        $idpsn->input('idpsn',20);
-        $idsteam->input('idsteam',20);
-        $idxbox->input('idxbox',20);
-        $idriotgames->input('idnintendo',50);
-        $idepicgames->input('idepicgames',50);
-        $idactivision->input('idactivision',30);
-        $idblizzard->input('idblizzard',30);
-        $idriotgames->input('idriotgames',30);
-        $iduplay->input('iduplay',30);
-        $idbattlenet->input('idbattlenet',30);
-        $idbethesda->input('idbethesda',30);
-        $table->timestamps();
+        $age = $request->input('age');
+        $surname = $request->input('surname');
+        $nickname = $request->input('nickname');
+        $favoritegame = $request->input('favoritegame');
+        $city = $request->input('city');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $idpsn = $request->input('idpsn');
+        $idsteam = $request->input('idsteam');
+        $idxbox = $request->input('idxbox');
+        $idriotgames = $request->input('idnintendo');
+        $idepicgames = $request->input('idepicgames');
+        $idactivision = $request->input('idactivision');
+        $idblizzard = $request->input('idblizzard');
+        $idnintendo = $request->input('idnintendo');
+        $iduplay = $request->input('iduplay');
+        $idbattlenet = $request->input('idbattlenet');
+        $idbethesda = $request->input('idbethesda');
 
 
         try {
@@ -124,7 +125,7 @@ class UserController extends Controller
                     'idpsn' => $idpsn,
                     'idsteam' => $idsteam,
                     'idxbox' => $idxbox,
-                    'idnintendo' => $idnintendo,
+                    'idriotgames' => $idriotgames,
                     'idepicgames' => $idepicgames,
                     'idactivision' => $idactivision,
                     'idblizzard' => $idblizzard,

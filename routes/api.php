@@ -28,7 +28,7 @@ Route::post('newUser', [AuthController::class, "userRegister"]);
 //login
 Route::post('loginUser', [AuthController::class, "userLogin"]);
 //USUARIOS
-Route::get('User', [UserController::class, "showAllUsers"]);//
+Route::get('User', [UserController::class, "showAllUser"]);//
 Route::post('User', [UserController::class, "addUsers"]);//
 Route::get('User/{id}', [UserController::class, "UsersByID"]);//
 Route::put('User/{id}', [UserController::class, "UpdateUsers"]);//
