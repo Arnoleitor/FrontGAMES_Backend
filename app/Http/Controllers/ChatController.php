@@ -39,7 +39,7 @@ class ChatController extends Controller
            
         }
     }
-    //SEARCH MESSAGES BY ID
+    //SEARCH CHATS BY ID
     public function ChatbyID($id){
 
 
@@ -87,7 +87,7 @@ class ChatController extends Controller
             }
             }
         }
-        //SHOW ALL MESSAGES
+        //SHOW ALL CHATS
         public function showAllChat(){
     
             try {
