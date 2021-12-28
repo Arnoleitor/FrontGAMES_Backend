@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Chat;
+use Illuminate\Database\QueryException;
 class ChatController extends Controller
 {
-    public function createMessage(Request $request){
+    public function createChat(Request $request){
 
-        $iduser = $request->input('iduser1');
-        $iduser = $request->input('iduser2');
+        $iduser1 = $request->input('iduser1');
+        $iduser2 = $request->input('iduser2');
         $idchat = $request->input('idchat');
         $message = $request->input('message');
 
@@ -18,10 +19,10 @@ class ChatController extends Controller
 
         try {
 
-            return Message::create(
+            return Chat::create(
                 [
-                    'iduser1' => $idusuario1,
-                    'iduser2' => $idusuario2,
+                    'iduser1' => $iduser1,
+                    'iduser2' => $iduser2,
                     'idchat' => $idchat,
                     'message'=>$message,
 
@@ -39,13 +40,13 @@ class ChatController extends Controller
         }
     }
     //SEARCH MESSAGES BY ID
-    public function MessagebyID($id){
+    public function ChatbyID($id){
 
 
         try {
-            $Message = Message::all()
+            $Chat = Chat::all()
             ->where('id', "=", $id);
-            return $Message;
+            return $Chat;
     
         } catch (QueryException $error) {
     
@@ -56,24 +57,24 @@ class ChatController extends Controller
         }
         
     }
-    //DELETE MessageS BY ID
-    public function deleteMessage($id){
+    //DELETE ChatS BY ID
+    public function deleteChat($id){
 
         try {
-            $arrayMessage = Message::all()
+            $arrayChat = Chat::all()
             ->where('id', '=', $id);
 
-            $Message = Message::where('id', '=', $id);
+            $Chat = Chat::where('id', '=', $id);
             
-            if (count($arrayMessage) == 0) {
+            if (count($arrayChat) == 0) {
                 return response()->json([
-                    "data" => $arrayMessage,
+                    "data" => $arrayChat,
                     "message" => "No se ha encontrado el Message"
                 ]);
             }else{
-                $Message->delete();
+                $Chat->delete();
                 return response()->json([
-                    "data" => $arrayMessage,
+                    "data" => $arrayChat,
                     "message" => "Message borrado correctamente"
                 ]);
             }
@@ -87,11 +88,11 @@ class ChatController extends Controller
             }
         }
         //SHOW ALL MESSAGES
-        public function showAllMessage(){
+        public function showAllChat(){
     
             try {
                 
-            return Message::all();
+            return Chat::all();
     
             } catch(QueryException $error) {
                 return $error;
