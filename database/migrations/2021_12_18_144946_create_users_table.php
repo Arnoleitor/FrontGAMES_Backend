@@ -15,6 +15,26 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('name',30);
+            $table->string('role',10);
+            $table->string('age',3);
+            $table->string('surname',50);
+            $table->string('nickname',20);
+            $table->string('favoritegame',20);
+            $table->string('city',20);
+            $table->string('email',50)->unique();
+            $table->string('password',50);
+            $table->string('idpsn',30);
+            $table->string('idsteam',30);
+            $table->string('idxbox',30);
+            $table->string('idnintendo',30);
+            $table->string('idepicgames',30);
+            $table->string('idactivision',30);
+            $table->string('idblizzard',30);
+            $table->string('idriotgames',30);
+            $table->string('iduplay',30);
+            $table->string('idbattlenet',30);
+            $table->string('idbethesda',30);
             $table->timestamps();
         });
     }
