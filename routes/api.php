@@ -23,19 +23,33 @@ use App\Http\Controllers\AuthController;
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
-//Registro
+//REGISTER
 Route::post('newUser', [AuthController::class, "userRegister"]);
-//login
+
+//LOGIN
+
 Route::post('loginUser', [AuthController::class, "userLogin"]);
-//USUARIOS
+
+//USERS
+
 Route::get('User', [UserController::class, "showAllUser"]);//
 Route::post('User', [UserController::class, "addUsers"]);//
 Route::get('User/{id}', [UserController::class, "UsersByID"]);//
 Route::put('User/{id}', [UserController::class, "UpdateUsers"]);//
 Route::delete('User/{id}', [UserController::class, "DeleteUsers"]);//
-//MENSAJES
+
+//CHATS
+
 Route::post('Chat', [ChatController::class, "createChat"]);//
 Route::delete('Chat/{id}', [ChatController::class, "deleteChat"]);//
 Route::get('Chat/{id}', [ChatController::class, "ChatbyID"]);//
 Route::get('Chat', [ChatController::class, "showAllChat"]);//
+
+//GROUPS
+
+Route::post('Group', [GroupController::class, "newgroup"]);//
+Route::get('Group', [GroupController::class, "showAllgroup"]);//
+Route::get('Group/{id}', [GroupController::class, "showgroupByID"]);//
+Route::delete('Group/{id}', [GroupController::class, "Deletegroup"]);//
+Route::put('Group/{id}', [GroupController::class, "Updatetegroup"]);//
 ;

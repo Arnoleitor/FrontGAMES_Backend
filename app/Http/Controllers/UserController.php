@@ -82,7 +82,7 @@ class UserController extends Controller
         }
         
     }
-   ////////////////Modificar Users////////////////
+   ////////////////update Users////////////////
     public function UpdateUsers (Request $request,$id){
 
        
@@ -146,7 +146,7 @@ class UserController extends Controller
 
         }
     }
-    ////////////////Busqueda por ID Users ////////////////
+    ////////////////Search users by ID ////////////////
 
     public function UsersByID($id){
 
@@ -166,13 +166,13 @@ class UserController extends Controller
         
     }
 
-    ////////////////Borrar Users ////////////////
+    ////////////////Delete Users ////////////////
     public function DeleteUsers($id){
 
         
 
         try {
-    ////////////////BUSCA EL PLAYER POR ID////////////////
+    ////////////////Delete user by ID////////////////
             $arrayUser = User::all()
             ->where('id', '=', $id);
 
