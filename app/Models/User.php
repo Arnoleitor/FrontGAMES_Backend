@@ -7,5 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable, HasApiTokens;
+    protected $fillable = [
+        'name',
+        'role',
+        'age',
+        'surname',
+        'nickname',
+        'favoritegame',
+        'city',
+        'email',
+        'password',
+        'idpsn',
+        'idsteam',
+        'idxbox',
+        'idnintendo',
+        'idepicgames',
+        'idactivision',
+        'idblizzard',
+        'idriotgames',
+        'iduplay',
+        'idbattlenet',
+        'idbethesda'
+    ];
 }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Coment extends Model
 {
     use HasFactory;
+    protected $fillable = [
+
+        'iduser', 'idpost', 'coment'
+
+    ];
 }
