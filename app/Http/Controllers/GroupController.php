@@ -78,13 +78,13 @@ public function Deletegroup($id){
         if (count($arrayGroup) == 0) {
             return response()->json([
                 "data" => $arrayGroup,
-                "message" => "No se ha encontrado el Group"
+                "message" => "Not found Group"
             ]);
         }else{
             $Group->delete();
             return response()->json([
                 "data" => $arrayGroup,
-                "message" => "Group borrado correctamente"
+                "message" => "Group deleted succesfully"
             ]);
         }
 
