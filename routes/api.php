@@ -69,4 +69,13 @@ Route::get('Post', [PostController::class, "showAllpost"]);//
 Route::get('Post/{id}', [PostController::class, "showpostByID"]);//
 Route::put('Post/{id}', [PostController::class, "updatepost"]);//
 Route::delete('Post/{id}', [PostController::class, "deletepost"]);//
+
+//FRIENDS
+
+Route::post('Coment', [ComentController::class, "newcoment"]);//
+Route::get('Coment', [ComentController::class, "showAllcoment"]);//
+Route::get('Coment/{id}', [ComentController::class, "showcomentByID"]);//
+Route::put('Coment/{id}', [ComentController::class, "updatecoment"]);//
+Route::delete('Coment/{id}', [ComentController::class, "deletecoment"]);//
+
 ;
