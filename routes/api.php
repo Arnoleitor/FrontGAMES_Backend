@@ -60,4 +60,13 @@ Route::get('Friend', [FriendController::class, "showAllfriend"]);//
 Route::get('Friend/{id}', [FriendController::class, "showfriendByID"]);//
 Route::put('Friend/{id}', [FriendController::class, "updatefriend"]);//
 Route::delete('Friend/{id}', [FriendController::class, "deletefriend"]);//
+
+
+//POSTS
+
+Route::post('Post', [PostController::class, "newpost"]);//
+Route::get('Post', [PostController::class, "showAllpost"]);//
+Route::get('Post/{id}', [PostController::class, "showpostByID"]);//
+Route::put('Post/{id}', [PostController::class, "updatepost"]);//
+Route::delete('Post/{id}', [PostController::class, "deletepost"]);//
 ;

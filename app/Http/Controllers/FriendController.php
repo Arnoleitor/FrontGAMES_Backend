@@ -67,10 +67,10 @@ class FriendController extends Controller
     }
 }
     //DELETE FRIEND BY ID
-public function Deletefriend($id){
+public function deletefriend($id){
 
     try {
-        $arrayGroup = Friend::all()
+        $arrayFriend = Friend::all()
         ->where('id', '=', $id);
 
         $Friend = Friend::where('id', '=', $id);
