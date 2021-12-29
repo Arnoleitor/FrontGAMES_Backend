@@ -34,4 +34,23 @@ class User extends Authenticatable
         'idbattlenet',
         'idbethesda'
     ];
+    
+    public function chats()
+    {
+        return $this->belongsTo(Chat::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+    public function friends()
+    {
+        return $this->hasMany(Friend::class);
+    }
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
+    
 }

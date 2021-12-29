@@ -19,72 +19,72 @@ class UserController extends Controller
         }
     }
     ////////////////Crear Users////////////////
-    public function addUser(Request $request){//sin id y sin fecha
+    // public function addUser(Request $request){//sin id y sin fecha
 
-        $email = $request->input('name');
-        $nombre = $request->input('role');
-        $password = $request->input('age');
-        $role = $request->input('surname');
-        $tipo = $request->input('nickname');
-        $raza = $request->input('favoritegame');
-        $edad = $request->input('city');
-        $localidad = $request->input('email');
-        $password->input('password');
-        $idpsn->input('idpsn');
-        $idsteam->input('idsteam');
-        $idxbox->input('idxbox');
-        $idriotgames->input('idnintendo');
-        $idepicgames->input('idepicgames');
-        $idactivision->input('idactivision');
-        $idblizzard->input('idblizzard');
-        $idriotgames->input('idriotgames');
-        $iduplay->input('iduplay');
-        $idbattlenet->input('idbattlenet');
-        $idbethesda->input('idbethesda');
-        $table->timestamps();
+    //     $email = $request->input('name');
+    //     $nombre = $request->input('role');
+    //     $password = $request->input('age');
+    //     $role = $request->input('surname');
+    //     $tipo = $request->input('nickname');
+    //     $raza = $request->input('favoritegame');
+    //     $edad = $request->input('city');
+    //     $localidad = $request->input('email');
+    //     $password->input('password');
+    //     $idpsn->input('idpsn');
+    //     $idsteam->input('idsteam');
+    //     $idxbox->input('idxbox');
+    //     $idriotgames->input('idnintendo');
+    //     $idepicgames->input('idepicgames');
+    //     $idactivision->input('idactivision');
+    //     $idblizzard->input('idblizzard');
+    //     $idriotgames->input('idriotgames');
+    //     $iduplay->input('iduplay');
+    //     $idbattlenet->input('idbattlenet');
+    //     $idbethesda->input('idbethesda');
+    //     $table->timestamps();
 
-        try {
+    //     try {
 
-            return User::create(
-                [
-                    'name' => $name,
-                    'role' => $role,
-                    'age' => $age,
-                    'surname' => $surname,
-                    'nickname' => $nickname,
-                    'favoritegame' => $favoritegame,
-                    'city' => $city,
-                    'email' => $email,
-                    'password' => $password,
-                    'idpsn' => $idpsn,
-                    'idsteam' => $idsteam,
-                    'idxbox' => $idxbox,
-                    'idnintendo' => $idnintendo,
-                    'idepicgames' => $idepicgames,
-                    'idactivision' => $idactivision,
-                    'idblizzard' => $idblizzard,
-                    'idnintendo' => $idriotgames,
-                    'iduplay' => $iduplay,
-                    'idbattlenet' => $idbattlenet,
-                    'idbethesda' => $idbethesda,
+    //         return User::create(
+    //             [
+    //                 'name' => $name,
+    //                 'role' => $role,
+    //                 'age' => $age,
+    //                 'surname' => $surname,
+    //                 'nickname' => $nickname,
+    //                 'favoritegame' => $favoritegame,
+    //                 'city' => $city,
+    //                 'email' => $email,
+    //                 'password' => $password,
+    //                 'idpsn' => $idpsn,
+    //                 'idsteam' => $idsteam,
+    //                 'idxbox' => $idxbox,
+    //                 'idnintendo' => $idnintendo,
+    //                 'idepicgames' => $idepicgames,
+    //                 'idactivision' => $idactivision,
+    //                 'idblizzard' => $idblizzard,
+    //                 'idnintendo' => $idriotgames,
+    //                 'iduplay' => $iduplay,
+    //                 'idbattlenet' => $idbattlenet,
+    //                 'idbethesda' => $idbethesda,
                     
-                ]
-                );
+    //             ]
+    //             );
 
-        } catch (QueryException $error) {
-            $codigoError = $error->errorInfo[1];
+    //     } catch (QueryException $error) {
+    //         $codigoError = $error->errorInfo[1];
 
             
-                return response()->json([
-                    'error' => $codigoError
-                ]);
+    //             return response()->json([
+    //                 'error' => $codigoError
+    //             ]);
             
-        }
+    //     }
         
-    }
+    // }
    ////////////////update Users////////////////
-    public function UpdateUsers (Request $request,$id){
-
+    public function UpdateUsers (Request $request){
+        $id = $request->user()->id;
        
         $name = $request->input('name');
         $role = $request->input('role');
@@ -147,10 +147,10 @@ class UserController extends Controller
         }
     }
     ////////////////Search users by ID ////////////////
-
-    public function UsersByID($id){
-
-
+    
+    public function UsersByID(Request $request){
+        $id = $request->user()->id;
+       
         try {
             $User = User::all()
             ->where('id', "=", $id);

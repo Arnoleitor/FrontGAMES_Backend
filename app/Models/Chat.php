@@ -11,7 +11,14 @@ class Chat extends Model
 
     protected $fillable = [
 
-        'iduser1', 'iduser2', 'idchat','message'
+        'iduser', 'friend','message'
 
     ];
+    public function users()
+
+    {
+        return $this->hasOne(User::class);
+    }
+
+    
 }

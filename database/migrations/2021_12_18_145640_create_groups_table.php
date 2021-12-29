@@ -17,7 +17,13 @@ class CreateGroupsTable extends Migration
             $table->id();
             $table->string('name',100);
             $table->unsignedInteger('iduser');
-            $table->unsignedInteger('idgroup');
+            $table->foreign('idusergroup')
+            ->references('id')
+            ->on('users')
+            ->unsigned()
+            ->constrained('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -11,7 +11,6 @@ class ChatController extends Controller
 
         $iduser1 = $request->input('iduser1');
         $iduser2 = $request->input('iduser2');
-        $idchat = $request->input('idchat');
         $message = $request->input('message');
 
         
@@ -23,7 +22,6 @@ class ChatController extends Controller
                 [
                     'iduser1' => $iduser1,
                     'iduser2' => $iduser2,
-                    'idchat' => $idchat,
                     'message'=>$message,
 
                 ]
