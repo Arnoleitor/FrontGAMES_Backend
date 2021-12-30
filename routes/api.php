@@ -9,6 +9,7 @@ use App\Http\Controllers\FriendController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ComentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,4 +82,9 @@ Route::get('Coment/{id}', [ComentController::class, "showcomentByID"]);//
 Route::put('Coment/{id}', [ComentController::class, "updatecoment"]);//
 Route::delete('Coment/{id}', [ComentController::class, "deletecoment"]);//
 
+//MESSAGE
+
+Route::post('Message', [MessageController::class, "createmessage"]);//
+Route::get('Message', [MessageController::class, "showAllmessage"]);//
+Route::delete('Message/{id}', [MessageController::class, "deletemessage"]);//
 });
