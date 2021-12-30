@@ -14,24 +14,15 @@ class CreateChatsTable extends Migration
     public function up()
     {
         Schema::create('chats', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger('iduser');
-            $table->foreign('iduser')
+            $table->increments('id');
+            $table->unsignedInteger('idfriends');
+            $table->foreign('idfriends')
             ->references('id')
-            ->on('users')
+            ->on('friends')
             ->unsigned()
-            ->constrained('iduser')
+            ->constrained('friends')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->unsignedInteger('friend');
-            $table->foreign('friend')
-            ->references('id')
-            ->on('users')
-            ->unsigned()
-            ->constrained('friend')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
-            $table->string('message',500);
             $table->timestamps();
         });
     }

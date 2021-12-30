@@ -35,10 +35,6 @@ class User extends Authenticatable
         'idbethesda'
     ];
     
-    public function chats()
-    {
-        return $this->belongsTo(Chat::class);
-    }
 
     public function posts()
     {

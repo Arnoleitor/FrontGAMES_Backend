@@ -14,21 +14,19 @@ class CreateFriendsTable extends Migration
     public function up()
     {
         Schema::create('friends', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->unsignedInteger('iduser1');
-            $table->foreign('iduser1friend')
+            $table->foreign('iduser1')
             ->references('id')
             ->on('users')
-            ->unsigned()
-            ->constrained('users')
+          
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->unsignedInteger('iduser2');
-            $table->foreign('iduser2friend')
+            $table->foreign('iduser2')
             ->references('id')
             ->on('users')
-            ->unsigned()
-            ->constrained('users')
+           
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();

@@ -14,9 +14,9 @@ class CreateComentsTable extends Migration
     public function up()
     {
         Schema::create('coments', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->unsignedInteger('iduser');
-            $table->foreign('idusercomment')
+            $table->foreign('iduser')
             ->references('id')
             ->on('users')
             ->unsigned()
@@ -24,7 +24,7 @@ class CreateComentsTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->unsignedInteger('idpost');
-            $table->foreign('idpostcomment2')
+            $table->foreign('idpost')
             ->references('id')
             ->on('posts')
             ->unsigned()
