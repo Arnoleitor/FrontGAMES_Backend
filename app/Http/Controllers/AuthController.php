@@ -10,7 +10,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    //REGISTRAR USUARIO
+    //USER SIGNUP
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function userRegister(Request $request)
     {
@@ -54,7 +54,7 @@ class AuthController extends Controller
         ], 200);
     }
 
-    //LOGIN DE USUARIO
+    //USER LOGIN
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function userLogin(Request $request)
     {

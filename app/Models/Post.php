@@ -12,4 +12,13 @@ class Post extends Model
         'iduser', 'title', 'text','image'
 
     ];
+    public function coments()
+    {
+        return $this->hasMany(Coment::class);
+    }
+    public function users()
+    {
+        return $this->hasOne(User::class);
+    }
+  
 }

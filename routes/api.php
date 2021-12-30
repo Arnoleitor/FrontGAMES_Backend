@@ -30,12 +30,15 @@ Route::post('newUser', [AuthController::class, "userRegister"]);
 
 Route::post('loginUser', [AuthController::class, "userLogin"]);
 
+
+//MIDELWARE
+Route::middleware('auth:api')->group(function(){
 //USERS
 
-Route::get('User', [UserController::class, "showAllUser"]);//
+Route::get('Users', [UserController::class, "showAllUser"]);//
 Route::post('User', [UserController::class, "addUsers"]);//
-Route::get('User/{id}', [UserController::class, "UsersByID"]);//
-Route::put('User/{id}', [UserController::class, "UpdateUsers"]);//
+Route::get('User', [UserController::class, "UsersByID"]);//
+Route::put('User', [UserController::class, "UpdateUsers"]);//
 Route::delete('User/{id}', [UserController::class, "DeleteUsers"]);//
 
 //CHATS
@@ -78,4 +81,4 @@ Route::get('Coment/{id}', [ComentController::class, "showcomentByID"]);//
 Route::put('Coment/{id}', [ComentController::class, "updatecoment"]);//
 Route::delete('Coment/{id}', [ComentController::class, "deletecoment"]);//
 
-;
+});

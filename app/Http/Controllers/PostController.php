@@ -9,9 +9,9 @@ class PostController extends Controller
 {
     ////////CREATE NEW POST
     public function newpost (Request $request){
-
+    
         
-        $iduser = $request->input('iduser');
+        $iduser = $request->user()->id;
         $title = $request->input('title');
         $text = $request->input('text');
         $image = $request->input('image');
@@ -71,21 +71,28 @@ class PostController extends Controller
     }
 }
     //DELETE POST BY ID
-public function deletepost($id){
-
+    public function deletepost($id, Request $request){
+    $iduser = $request->user()->id;
     try {
         $arrayPost = Post::all()
         ->where('id', '=', $id);
-
-        $Post = Post::where('id', '=', $id);
-        
+       
+        $Post = Post::where('id', "=", $id)
+        ->where('iduser', '=', $iduser)->get();
         if (count($arrayPost) == 0) {
             return response()->json([
                 "data" => $arrayPost,
                 "message" => "Not found Post"
             ]);
-        }else{
-            $Post->delete();
+        }
+        else if(count($Post) == 0) 
+        {
+            return response()->json([
+                'message' => 'unauthorized'
+            ]);
+        }
+        else{
+            $Post[0]->delete();
             return response()->json([
                 "data" => $arrayPost,
                 "message" => "Post deleted succesfully"

@@ -7,7 +7,7 @@ use App\Models\Coment;
 use Illuminate\Database\QueryException;
 class ComentController extends Controller
 {
-    //////////CREATE NEW Coment
+    //////////CREATE NEW COMENT\\\\\\\\\\\
     public function newcoment (Request $request){
 
         
@@ -41,7 +41,7 @@ class ComentController extends Controller
         }
 }
 
-    //SEARCH COMENT BY ID
+    //SEARCH COMENT BY ID\\
     public function showcomentByID($id){
 
 
@@ -59,7 +59,7 @@ class ComentController extends Controller
     }
     
 }
-    //SEARCH ALL COMENT
+    //SEARCH ALL COMENT\\
     public function showAllcoment(){
     
     try {
@@ -70,7 +70,7 @@ class ComentController extends Controller
         return $error;
     }
 }
-    //DELETE COMENT BY ID
+    //DELETE COMENT BY ID\\
 public function deletecoment($id){
 
     try {

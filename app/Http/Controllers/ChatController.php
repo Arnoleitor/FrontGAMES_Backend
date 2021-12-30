@@ -9,22 +9,17 @@ class ChatController extends Controller
 {
     public function createChat(Request $request){
 
-        $iduser1 = $request->input('iduser1');
-        $iduser2 = $request->input('iduser2');
-        $idchat = $request->input('idchat');
-        $message = $request->input('message');
+        $idfriends = $request->input('idfriends');
 
-        
+
         
 
         try {
 
             return Chat::create(
                 [
-                    'iduser1' => $iduser1,
-                    'iduser2' => $iduser2,
-                    'idchat' => $idchat,
-                    'message'=>$message,
+                    'idfriends' => $idfriends,
+                
 
                 ]
             );
