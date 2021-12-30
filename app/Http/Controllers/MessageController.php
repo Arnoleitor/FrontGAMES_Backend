@@ -12,7 +12,7 @@ class MessageController extends Controller
         // $id = $request->message()->id;
        
         $idchat = $request->input('idchat');
-        $iduser = $request->input('iduser');
+        $idferiends = $request->input('idfriends');
         $message = $request->input('message');
 
 
@@ -21,7 +21,7 @@ class MessageController extends Controller
                 [
                    
                     'idchat' => $idchat,
-                    'iduser' => $iduser,
+                    'idfriends' => $idferiends,
                     'message' => $message,
                    
                 ]

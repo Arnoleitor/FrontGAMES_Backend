@@ -10,7 +10,12 @@ class Message extends Model
     use HasFactory;
 
     protected $fillable = [
-        'idchat', 'iduser', 'message'
+        'idchat', 'idfriends', 'message'
 
     ];
+    public function chats()
+
+    {
+        return $this->hasOne(Chat::class);
+    }
 }
