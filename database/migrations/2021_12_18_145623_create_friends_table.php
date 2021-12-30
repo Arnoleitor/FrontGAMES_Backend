@@ -19,14 +19,12 @@ class CreateFriendsTable extends Migration
             $table->foreign('iduser1')
             ->references('id')
             ->on('users')
-          
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->unsignedInteger('iduser2');
             $table->foreign('iduser2')
             ->references('id')
             ->on('users')
-           
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();
