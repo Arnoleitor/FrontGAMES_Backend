@@ -16,7 +16,21 @@ class CreateMessagesTable extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('idchat');
-            $table->unsignedInteger('iduser');
+            $table->foreign('idchat')
+            ->references('id')
+            ->on('chats')
+            ->unsigned()
+            ->constrained('chats')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->unsignedInteger('idfriends');
+            $table->foreign('idfriends')
+            ->references('id')
+            ->on('friends')
+            ->unsigned()
+            ->constrained('friends')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->string('message',500);
             $table->timestamps();
         });
