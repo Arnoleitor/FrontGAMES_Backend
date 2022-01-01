@@ -65,7 +65,14 @@ class AuthController extends Controller
 
         if (auth()->attempt($data)) {
             $token = auth()->user()->createToken('LaravelAuthApp')->accessToken;
-            return response()->json(['token' => $token], 200);
+        
+             $User = User::all()
+            ->where('email', "=", $request->email);
+            return response()->json([
+                'token' => $token,
+                'user' => $User,
+        
+            ],200);
         } else {
             return response()->json(['error' => 'Unauthorised'], 401);
         }

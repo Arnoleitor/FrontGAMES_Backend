@@ -64,13 +64,13 @@ class ChatController extends Controller
             if (count($arrayChat) == 0) {
                 return response()->json([
                     "data" => $arrayChat,
-                    "message" => "No se ha encontrado el Message"
+                    "message" => "Chat not found."
                 ]);
             }else{
                 $Chat->delete();
                 return response()->json([
                     "data" => $arrayChat,
-                    "message" => "Message borrado correctamente"
+                    "message" => "Chat deleted successfully"
                 ]);
             }
 
