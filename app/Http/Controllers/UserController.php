@@ -94,7 +94,7 @@ class UserController extends Controller
         $favoritegame = $request->input('favoritegame');
         $city = $request->input('city');
         $email = $request->input('email');
-        $password = $request->inputbcrypt.hashSync('password');
+        $password = $request->input('password');
         $idpsn = $request->input('idpsn');
         $idsteam = $request->input('idsteam');
         $idxbox = $request->input('idxbox');
