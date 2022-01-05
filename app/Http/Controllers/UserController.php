@@ -98,11 +98,11 @@ class UserController extends Controller
         $idpsn = $request->input('idpsn');
         $idsteam = $request->input('idsteam');
         $idxbox = $request->input('idxbox');
-        $idriotgames = $request->input('idnintendo');
+        $idnintendo = $request->input('idnintendo');
         $idepicgames = $request->input('idepicgames');
         $idactivision = $request->input('idactivision');
         $idblizzard = $request->input('idblizzard');
-        $idnintendo = $request->input('idriotgames');
+        $idriotgames = $request->input('idriotgames');
         $iduplay = $request->input('iduplay');
         $idbattlenet = $request->input('idbattlenet');
         $idbethesda = $request->input('idbethesda');
