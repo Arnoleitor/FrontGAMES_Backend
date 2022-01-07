@@ -109,6 +109,8 @@ class UserController extends Controller
 
         try {
 
+            $findUSer=User::where('id', '=', $id);
+
             $User = User::where('id', '=', $id)
             ->update(
                 [
