@@ -94,7 +94,6 @@ class UserController extends Controller
         $favoritegame = $request->input('favoritegame');
         $city = $request->input('city');
         $email = $request->input('email');
-        $password = $request->input('password');
         $idpsn = $request->input('idpsn');
         $idsteam = $request->input('idsteam');
         $idxbox = $request->input('idxbox');
@@ -113,26 +112,25 @@ class UserController extends Controller
             $User = User::where('id', '=', $id)
             ->update(
                 [
-                    'name' => $name,
-                    'role' => $role,
-                    'age' => $age,
-                    'surname' => $surname,
-                    'nickname' => $nickname,
-                    'favoritegame' => $favoritegame,
-                    'city' => $city,
+                    'name' => $name||"",
+                    'role' => $role||"",
+                    'age' => $age||"",
+                    'surname' => $surname||"",
+                    'nickname' => $nickname||"",
+                    'favoritegame' => $favoritegame||"",
+                    'city' => $city||"",
                     'email' => $email,
-                    'password' => $password,
-                    'idpsn' => $idpsn,
-                    'idsteam' => $idsteam,
-                    'idxbox' => $idxbox,
-                    'idnintendo' => $idnintendo,
-                    'idepicgames' => $idepicgames,
-                    'idactivision' => $idactivision,
-                    'idblizzard' => $idblizzard,
-                    'idriotgames' => $idriotgames,
-                    'iduplay' => $iduplay,
-                    'idbattlenet' => $idbattlenet,
-                    'idbethesda' => $idbethesda,
+                    'idpsn' => $idpsn||"",
+                    'idsteam' => $idsteam||"",
+                    'idxbox' => $idxbox||"",
+                    'idnintendo' => $idnintendo||"",
+                    'idepicgames' => $idepicgames||"",
+                    'idactivision' => $idactivision||"",
+                    'idblizzard' => $idblizzard||"",
+                    'idriotgames' => $idriotgames||"",
+                    'iduplay' => $iduplay||"",
+                    'idbattlenet' => $idbattlenet||"",
+                    'idbethesda' => $idbethesda||"",
                 ]
                 );
                 return User::all()
