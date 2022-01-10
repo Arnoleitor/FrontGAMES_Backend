@@ -63,8 +63,9 @@ class ComentController extends Controller
     public function showAllcoment(){
     
     try {
-        
-    return Coment::all();
+    return Coment::select("*")
+    ->join("users","users.id","=","coments.iduser")
+    ->get();
 
     } catch(QueryException $error) {
         return $error;
