@@ -17,4 +17,8 @@ class Coment extends Model
     {
         return $this->hasOne(Post::class);
     }
+    public function users()
+    {
+        return $this->hasOne(User::class);
+    }
 }

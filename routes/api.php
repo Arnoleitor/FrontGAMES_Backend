@@ -74,7 +74,7 @@ Route::get('Post/{id}', [PostController::class, "showpostByID"]);//
 Route::put('Post/{id}', [PostController::class, "updatepost"]);//
 Route::delete('Post/{id}', [PostController::class, "deletepost"]);//
 
-//FRIENDS
+//Coment
 
 Route::post('Coment', [ComentController::class, "newcoment"]);//
 Route::get('Coment', [ComentController::class, "showAllcoment"]);//
