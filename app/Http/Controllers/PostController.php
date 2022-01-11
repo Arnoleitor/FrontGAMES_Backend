@@ -64,7 +64,7 @@ class PostController extends Controller
     
     try {
         return Post::select("*")
-    ->join("users","users.id","=","post.iduser")
+    ->join("users","users.id","=","posts.iduser")
     ->get();
 
     } catch(QueryException $error) {
