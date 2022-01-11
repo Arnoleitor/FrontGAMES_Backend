@@ -63,8 +63,9 @@ class PostController extends Controller
     public function showAllpost(){
     
     try {
-        
-    return Post::all();
+        return Post::select("*")
+    ->join("users","users.id","=","post.iduser")
+    ->get();
 
     } catch(QueryException $error) {
         return $error;
