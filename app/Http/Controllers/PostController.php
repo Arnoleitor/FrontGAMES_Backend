@@ -63,7 +63,7 @@ class PostController extends Controller
     public function showAllpost(){
     
     try {
-        return Post::select("*")
+        return Post::select("posts.*","users.nickname","users.name")
     ->join("users","users.id","=","posts.iduser")
     ->get();
 
