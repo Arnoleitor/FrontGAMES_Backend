@@ -58,9 +58,10 @@ class FriendController extends Controller
     //SEARCH ALL FRIEND
     public function showAllfriend(){
     
-    try {
-        
-    return Friend::all();
+        try {
+        return Friend::select("friends.*","users.nickname","users.name")
+        ->join("users","users.id","=","friends.iduser2")
+        ->get();
 
     } catch(QueryException $error) {
         return $error;
