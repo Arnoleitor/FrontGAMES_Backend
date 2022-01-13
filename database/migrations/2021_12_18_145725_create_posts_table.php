@@ -14,6 +14,7 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
+
             $table->increments('id');
             $table->unsignedInteger('iduser');
             $table->foreign('iduser')
@@ -27,6 +28,7 @@ class CreatePostsTable extends Migration
             $table->string('text',500);
             $table->string('image');
             $table->timestamps();
+            
         });
 
 

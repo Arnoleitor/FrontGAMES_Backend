@@ -16,15 +16,15 @@ use App\Http\Controllers\MessageController;
 | API Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
+| 
+|
+| 
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
+
 //REGISTER
+
 Route::post('newUser', [AuthController::class, "userRegister"]);
 
 //LOGIN
@@ -87,4 +87,5 @@ Route::delete('Coment/{id}', [ComentController::class, "deletecoment"]);//
 Route::post('Message', [MessageController::class, "createmessage"]);//
 Route::get('Message', [MessageController::class, "showAllmessage"]);//
 Route::delete('Message/{id}', [MessageController::class, "deletemessage"]);//
+
 });

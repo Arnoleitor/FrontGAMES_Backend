@@ -13,6 +13,7 @@ class Message extends Model
         'idchat', 'idfriends', 'message'
 
     ];
+    
     public function chats()
 
     {

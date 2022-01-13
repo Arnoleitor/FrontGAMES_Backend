@@ -14,6 +14,7 @@ class CreateMessagesTable extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
+
             $table->increments('id');
             $table->unsignedInteger('idchat');
             $table->foreign('idchat')
@@ -33,6 +34,7 @@ class CreateMessagesTable extends Migration
             ->onDelete('cascade');
             $table->string('message',500);
             $table->timestamps();
+            
         });
     }
 

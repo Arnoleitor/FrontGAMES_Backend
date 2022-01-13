@@ -14,6 +14,7 @@ class CreateComentsTable extends Migration
     public function up()
     {
         Schema::create('coments', function (Blueprint $table) {
+
             $table->increments('id');
             $table->unsignedInteger('iduser');
             $table->foreign('iduser')
@@ -33,6 +34,7 @@ class CreateComentsTable extends Migration
             ->onDelete('cascade');
             $table->string('coment',200);
             $table->timestamps();
+            
         });
     }
 

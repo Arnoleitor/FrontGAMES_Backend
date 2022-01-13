@@ -51,7 +51,7 @@ Tu red social de videojuegos, parte Backend ,se utilizan las tecnologías🔧 :
              incluirse el token del usuario a eliminar).
 ```
 ```
- Friends ----> Crear amistad entre dos usuarios /api/Friend (debe incluirse en el body las dos id y el token del usuario que hace el la función post)
+ Friends ----> Crear amistad entre dos usuarios /api/Friend (debe incluirse en el body las dos id y el token del usuario que hace la función post)
                {
                 "iduser1": 181,(el que quiere agregar al iduser 2)
                 "iduser2": 111 (al que añades como amigo)
@@ -60,7 +60,7 @@ Tu red social de videojuegos, parte Backend ,se utilizan las tecnologías🔧 :
 
 ```
 Chat ----> Para crear un chat entre dos amigos: /api/Chat
- (debe incluirseen el body lo siguiente):
+ (debe incluirse en el body lo siguiente):
             {
                 "idfriends": se incluye el ID generado al crear la amistad  (Usando el token de quien genera el chat)
             }
@@ -75,16 +75,15 @@ Message ----> Para crear un mensaje en el chat de dos amigos /api/Message
     }
 ```
 ```
-Posts ---->  /api/Post  (Para crear un post debe tener el siguiente body):
+Posts ---->  /api/Post (Para crear un post debe tener el siguiente body):
 (Debe incluir el token de quien lo crea).
 
     {
       
         "title": "nuevopost",
-        "text": "hola esto esun nuevo post",
-        "image": "imagen aqui"
+        "text": "hola esto es un nuevo post",
+        "image": "imagen aquí"
     }
-
 ```
 
 ```
