@@ -13,6 +13,7 @@ class Coment extends Model
         'iduser', 'idpost', 'coment'
 
     ];
+    
     public function posts()
     {
         return $this->hasOne(Post::class);

@@ -14,6 +14,7 @@ class CreateChatsTable extends Migration
     public function up()
     {
         Schema::create('chats', function (Blueprint $table) {
+
             $table->increments('id');
             $table->unsignedInteger('idfriends');
             $table->foreign('idfriends')
@@ -24,6 +25,7 @@ class CreateChatsTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();
+
         });
     }
 
@@ -33,6 +35,7 @@ class CreateChatsTable extends Migration
      * @return void
      */
     public function down()
+    
     {
         Schema::dropIfExists('chats');
     }

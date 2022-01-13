@@ -14,10 +14,11 @@ class Chat extends Model
        'idfriends'
 
     ];
+
     public function friends()
 
     {
-        return $this->hasOne(Friend::class);
+    return $this->hasOne(Friend::class);
     }
 
     

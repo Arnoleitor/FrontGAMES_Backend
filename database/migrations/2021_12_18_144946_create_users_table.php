@@ -14,6 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('name',30);
             $table->string('role',10);
@@ -36,6 +37,7 @@ class CreateUsersTable extends Migration
             $table->string('idbattlenet',30);
             $table->string('idbethesda',30);
             $table->timestamps();
+            
         });
     }
 

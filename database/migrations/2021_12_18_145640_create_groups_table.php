@@ -14,6 +14,7 @@ class CreateGroupsTable extends Migration
     public function up()
     {
         Schema::create('groups', function (Blueprint $table) {
+            
             $table->increments('id');
             $table->string('name',100);
             $table->unsignedInteger('iduser');
@@ -25,6 +26,7 @@ class CreateGroupsTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();
+
         });
     }
 

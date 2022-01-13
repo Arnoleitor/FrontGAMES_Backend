@@ -14,6 +14,7 @@ class Group extends Model
         'iduser',
         'idgroup'
     ];
+    
     public function users()
     {
         return $this->hasOne(User::class);
