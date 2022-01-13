@@ -7,63 +7,108 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## FrontGAMES_Backend
-Tu red social de videojuegos, parte Backend ,se utilizan las tecnologías : Laravel, Passport, Composer, PHP.
+<br>
+<p aling="center">
+  <img src="./images/Logo.png" width="500" title="hover text">
+</p>
 
-## About Laravel
+# FrontedGAMES Tu red social de videojuegos 2022
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Tu red social de videojuegos, parte Backend ,se utilizan las tecnologías🔧 : 
+* Laravel⚙️
+* Passport⚙️
+* Composer⚙️
+* PHP⚙️
+* Postman para pruebas locales⚙️
+* Mysql⚙️
+* Heroku⚙️
+ 
+ #
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* 🌐 Enlace AWS:https://main.d1zdk2h0thz2b5.amplifyapp.com/ parte frontal
 
-## Learning Laravel
+* 🌐 Deploy Heroku https://acefrontedgames.herokuapp.com/
+#
+### 👇Aqui se pueden ver las relaciones entre las tablas de la BBDD.👇
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<br>
+<p aling="center">
+  <img src="./images/RelacionesTablas.png" width="500" title="hover text">
+</p>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ENDPOINTS DE LA API⚙️
 
-## Laravel Sponsors
+```
+ User ----> Registro de nuevo user /api/newUser
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+           - Inicio sesión /api/loginUser
 
-### Premium Partners
+           - Actualizar perfil /api/User (debe incluirse el token del usuario a 
+             modificar).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+           - Borrar usuario /api/User/"introducir la id" sin comillas(debe
+             incluirse el token del usuario a eliminar).
+```
+```
+ Friends ----> Crear amistad entre dos usuarios /api/Friend (debe incluirse en el body las dos id y el token del usuario que hace el la función post)
+               {
+                "iduser1": 181,(el que quiere agregar al iduser 2)
+                "iduser2": 111 (al que añades como amigo)
+               }
+```
 
-## Contributing
+```
+Chat ----> Para crear un chat entre dos amigos: /api/Chat
+ (debe incluirseen el body lo siguiente):
+            {
+                "idfriends": se incluye el ID generado al crear la amistad  (Usando el token de quien genera el chat)
+            }
+```
+```
+Message ----> Para crear un mensaje en el chat de dos amigos /api/Message
+(debe incluirse en el body lo siguiente):
+    {
+        "idchat": 21, (debe incluir el id del chat creado anteriormente)
+        "idfriends":31, (debe incluir el id del amigo al que vas a enviar el mensaje)
+        "message":"Hola amigo " (debe incluir el token del user que manda el mensaje)
+    }
+```
+```
+Posts ---->  /api/Post  (Para crear un post debe tener el siguiente body):
+(Debe incluir el token de quien lo crea).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    {
+      
+        "title": "nuevopost",
+        "text": "hola esto esun nuevo post",
+        "image": "imagen aqui"
+    }
 
-## Code of Conduct
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+Coment ----> Para crear un nuevo comentario   /api/Coment
+(Debe incluir el siguiente body y el token)
 
-## Security Vulnerabilities
+    {
+        "iduser": 151,(El id del usuario que comenta)
+        "idpost": 131, (El id del post que se ha creado y en el cual comentas)
+        "coment": "Yo te ayudo"(El texto)
+    }
+```
+## ℹ️IMPLEMENTACIÓN DE SEGURIDAD EN LA API: PASSPORT
+* Se instala passport en el proyecto con los siguientes comandos:💻
+```
+*composer require laravel/passport
+*php artisan passport:install
+*php artisan --force passport_install (para crear las keys especiales necesarias para el funcionamiento)
+*Creamos AuthController, donde se añaden las funciones de registro de nuevo usuario, de login y de logout.
+```
+##
+<h4>GUIA INSTALACIÓN PASSPORT📔</h4>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+https://programacionymas.com/blog/api-rest-laravel-passport
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Autor ✒️ 
+* #### Arnold Carcelén - Desarrollo de la APP y documentación.
