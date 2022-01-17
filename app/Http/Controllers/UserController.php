@@ -111,7 +111,7 @@ class UserController extends Controller
     ////////////////Delete Users ////////////////
     public function DeleteUsers($id){
 
-        
+
 
         try {
     ////////////////Delete user by ID////////////////
