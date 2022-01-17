@@ -41,8 +41,9 @@ class MessageController extends Controller
     public function showAllmessage(){
     
         try {
-            
-        return Message::all();
+            return Post::select("messages.*","users.nickname","users.name")
+        ->join("users","users.id","=","messages.iduser")
+        ->get();
     
         } catch(QueryException $error) {
             return $error;
