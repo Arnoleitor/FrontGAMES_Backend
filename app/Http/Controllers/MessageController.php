@@ -42,8 +42,8 @@ class MessageController extends Controller
     
         try {
             
-            return Message::select("messages.*","users.nickname","users.name")
-            ->join("users","users.id","=","messages.iduser")
+        return Message::select("messages.*","users.nickname","users.name")
+            ->join("users","users.id","=","messages.id")
             ->get();
     
         } catch(QueryException $error) {
