@@ -42,9 +42,7 @@ class MessageController extends Controller
     
         try {
             
-        return Message::select("messages.*","users.nickname","users.name")
-            ->join("users","users.id","=","messages.id")
-            ->get();
+        return Message::all();
     
         } catch(QueryException $error) {
             return $error;
